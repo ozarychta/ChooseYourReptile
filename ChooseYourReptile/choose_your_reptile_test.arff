@@ -1,0 +1,24 @@
+@relation choose_your_reptile_test
+
+@attribute enclosure_size numeric
+@attribute care_hours_per_week numeric
+@attribute children numeric
+@attribute monthly_income_pln numeric
+@attribute off_house_days_per_week numeric
+@attribute rodent_feeding {0,1}
+@attribute insect_feeding {0,1}
+@attribute num_of_reptiles_already_raised  numeric
+
+@attribute class {Argentine Tegu,Cornsnake,Leopard Gecko,Yemen Chameleon,Ball Python,Blue Tongue Skink,Musk Turtle,Green Iquana,Common Boa,Bearded Dragon}
+
+@data
+3.9,28,0,11000,0,1,0,4,'Argentine Tegu'
+0.13,2,3,2800,5,1,0,0,'Cornsnake'
+0.31,8,2,2600,5,0,1,0,'Leopard Gecko'
+0.32,26,2,5500,0,1,1,4,'Yemen Chameleon'
+0.18,2,3,5500,6,1,0,1,'Ball Python'
+0.11,8,3,6000,1,0,0,0,'Blue Tongue Skink'
+0.12,12,2,3000,0,0,0,0,'Musk Turtle'
+7.9,28,0,16200,0,0,1,7,'Green Iquana'
+1.4,2,3,7200,6,1,0,3,'Common Boa'
+0.32,10,3,5800,0,1,1,2,'Bearded Dragon'

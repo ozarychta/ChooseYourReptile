@@ -1,0 +1,80 @@
+@relation choose_your_reptile_train
+
+@attribute enclosure_size numeric
+@attribute care_hours_per_week numeric
+@attribute children numeric
+@attribute monthly_income_pln numeric
+@attribute off_house_days_per_week numeric
+@attribute rodent_feeding {0,1}
+@attribute insect_feeding {0,1}
+@attribute num_of_reptiles_already_raised  numeric
+
+@attribute class {Argentine Tegu,Cornsnake,Leopard Gecko,Yemen Chameleon,Ball Python,Blue Tongue Skink,Musk Turtle,Green Iquana,Common Boa,Bearded Dragon}
+
+@data
+%-expensive, not for kids,big e size, big exp, lot of time 
+3.4,20,0,15000,0,0,0,5,'Argentine Tegu'
+3.9,24,0,12500,0,0,0,8,'Argentine Tegu'
+4.1,18,1,19000,1,0,0,7,'Argentine Tegu'
+4.7,18,0,16000,0,0,0,4,'Argentine Tegu'
+%-cheap, small, for a lot of kids, rodents, no exp, little time
+0.07,5,5,3500,3,1,0,0,'Cornsnake'
+0.1,3,1,2200,6,1,1,0,'Cornsnake'
+0.09,4,7,4000,4,1,1,1,'Cornsnake'
+0.07,5,6,3200,3,1,0,0,'Cornsnake'
+%-like cornsnake but needs a liile more time, space, no rodents but insects
+0.22,4,4,3000,4,0,1,0,'Leopard Gecko'
+0.3,6,3,3200,4,0,1,0,'Leopard Gecko'
+0.28,3,6,4000,6,0,1,0,'Leopard Gecko'
+0.25,4,0,2000,6,0,1,1,'Leopard Gecko'
+%-more expensive, time and and exp than leopard gecko, less kids, rarely leaving house
+0.23,14,0,4300,1,0,1,2,'Yemen Chameleon'
+0.25,18,2,5000,0,0,1,5,'Yemen Chameleon'
+0.3,15,1,6000,0,0,1,1,'Yemen Chameleon'
+0.28,19,0,4200,0,0,1,2,'Yemen Chameleon'
+%-rodents, more space and expensive than chameleon, but less time, no exp, kids ok
+0.15,2,5,6200,6,1,0,0,'Ball Python'
+0.2,4,3,4900,5,1,1,1,'Ball Python'
+0.16,4,3,6000,5,1,0,0,'Ball Python'
+0.15,3,5,5800,4,1,0,0,'Ball Python'
+%-like ball python but no rodents, no insects
+0.11,8,4,5600,2,0,0,0,'Blue Tongue Skink'
+0.16,10,2,5000,1,0,0,1,'Blue Tongue Skink'
+0.11,6,5,6200,0,0,0,0,'Blue Tongue Skink'
+0.2,10,4,5400,0,0,0,1,'Blue Tongue Skink'
+%-small, cheap, for kids like cornsnake and gecko but no rodents, no insects
+0.08,12,4,3200,1,0,0,0,'Musk Turtle'
+0.1,6,3,3200,2,0,0,0,'Musk Turtle'
+0.075,8,6,4200,0,0,0,1,'Musk Turtle'
+0.09,10,0,2000,0,0,0,0,'Musk Turtle'
+%-like tegu but even more demanding
+6.9,20,0,14000,0,0,0,8,'Green Iquana'
+7,24,1,15500,0,0,0,6,'Green Iquana'
+6.8,22,0,19000,0,0,0,10,'Green Iquana'
+7.5,18,0,20000,0,0,0,6,'Green Iquana'
+%-biggest snake, little more exp than other snakes, more expensive
+0.6,2,2,6200,6,1,0,2,'Common Boa'
+0.7,4,3,7000,5,1,1,1,'Common Boa'
+1.1,4,1,6000,5,1,0,2,'Common Boa'
+0.9,3,0,6800,4,1,0,1,'Common Boa'
+%-like chameleon, but better with kids, a lot of different food, less demanding, less time than chameleon, less exp i think
+0.23,8,1,4800,1,0,1,2,'Bearded Dragon'
+0.25,8,4,7100,1,0,1,0,'Bearded Dragon'
+0.3,9,3,6000,0,0,1,1,'Bearded Dragon'
+0.28,12,0,4500,0,0,1,1,'Bearded Dragon'
+
+%-can be bigger income, exp, time, size for easy lizards
+%-bigger income when a lot of kids, small income when no kids
+%-income between 7-11 missing
+
+%Tegu - expensive, not really for children, a really lot of space, exp needed 3.4m3
+%Cornsnake - cheap, for kids, eats rodents, can go long without people?, non exp 0.07m3
+%Leopard Gecko - cheap, for kids, but less than cornsnake because delicate, dont eat rodents, 0.22m3
+%		go long without people, no exp, insects
+%Yemen Chameleon - something average, some exp, expensive costs, ok with children, insects 0.23m3
+%Blue Tongue Skink - expensive, needs a lot of space, but good with children, no exp 0.11m3
+%Ball Python - ok with kids, bigger than cornsnake, eats once a week, expensive around like blue tongue, rodents 0.15m3
+%Musk Turtle - ok with kids, small, water, cheap, not much space 0.075m3
+%Green Iquana - insects, no for kids, a lot of exp and time, space 6.9m3
+%Common Boa - 0.6m3, quite expensive, rodents
+%Bearded dragon - ok with kids, insects, a little expensive, 0.28, exp
