@@ -15,7 +15,7 @@ def main():
     # reding data from arff
     data = arff.loadarff('choose_your_reptile.arff')
     df = pd.DataFrame(data[0])
-    classes = df['class']
+    Y_classes = df['class']
 
     df = df.drop(['class'], axis=1)
     X = df.values.tolist()
@@ -27,24 +27,24 @@ def main():
     Y = []
 
     # representing classes as integers
-    for x in classes:
-        if x == b'Argentine Tegu':
+    for c in Y_classes:
+        if c == b'Argentine Tegu':
             Y.append(0)
-        elif x == b'Cornsnake':
+        elif c == b'Cornsnake':
             Y.append(1)
-        elif x == b'Leopard Gecko':
+        elif c == b'Leopard Gecko':
             Y.append(2)
-        elif x == b'Yemen Chameleon':
+        elif c == b'Yemen Chameleon':
             Y.append(3)
-        elif x == b'Ball Python':
+        elif c == b'Ball Python':
             Y.append(4)
-        elif x == b'Blue Tongue Skink':
+        elif c == b'Blue Tongue Skink':
             Y.append(5)
-        elif x == b'Musk Turtle':
+        elif c == b'Musk Turtle':
             Y.append(6)
-        elif x == b'Green Iquana':
+        elif c == b'Green Iquana':
             Y.append(7)
-        elif x == b'Common Boa':
+        elif c == b'Common Boa':
             Y.append(8)
         else:
             Y.append(9)
@@ -59,18 +59,13 @@ def main():
         test_set_begining = int(f*records)
         test_set_ending = int((f+1)*records)
 
-        normalized_x_test = X[test_set_begining:test_set_ending]
+        x_test = X[test_set_begining:test_set_ending]
         y_test = Y[test_set_begining:test_set_ending]
 
-        normalized_x_train = list(X[:test_set_begining])
-        normalized_x_train.extend(list(X[test_set_ending:]))
+        x_train = list(X[:test_set_begining])
+        x_train.extend(list(X[test_set_ending:]))
         y_train = list(Y[:test_set_begining])
         y_train.extend(list(Y[test_set_ending:]))
-
-        x_train = np.array(normalized_x_train)
-        y_train = np.array(y_train)
-        x_test = np.array(normalized_x_test)
-        y_test = np.array(y_test)
 
         # print(x_train)
         # print(y_train)
@@ -87,7 +82,7 @@ def main():
                 dist = distance.euclidean(x, neighbour_x)
                 distances.append(dist)
 
-            closest_neighbours = y_train.tolist()
+            closest_neighbours = list(y_train)
 
             # bubble sort
             for i in range(len(distances)):
@@ -105,15 +100,15 @@ def main():
 
         accuracy.append(accuracy_score(y_test, y_predicted))
         print('\nAccuracy :')
-        print(accuracy[f])
+        print(str(accuracy[f]*100)+'%')
         print('Actual :')
-        print(y_test.tolist())
+        print(y_test)
         print('Predicted :')
         print(y_predicted)
 
     avg_accuracy = np.mean(accuracy)
-    print('\nAverage accuracy :')
-    print(avg_accuracy)
+    print('\nCorrectly classified :')
+    print(str(avg_accuracy*100)+'%')
 
 
 if __name__ == '__main__':
